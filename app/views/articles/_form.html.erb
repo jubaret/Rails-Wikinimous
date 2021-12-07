@@ -1,0 +1,23 @@
+<%= form_for(@article) do |f| %>
+  <%# <div class="form-floating">
+    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+    <label for="floatingTextarea">Comments</label>
+  </div> %>
+
+  <div class="form-floating m-3">
+    <%= f.text_field :title, class: "form-control" %>
+    <%= f.label :title, class: "p-6"%>
+  </div>
+  <div class="form-floating m-3">
+    <%= f.text_area :content, class: "form-control", style: "height: 500px" %>
+    <%= f.label :content, class: "p-6" %>
+  </div>
+  <%= f.submit "Submit", class: "btn btn-default btn-primary m-3" %>
+  <%= link_to "Cancel", article_path, class: "btn btn-light" %>
+<% end %>
+
+
+<%# <div class="form-floating">
+  <textarea class="form-control" placeholder="Enter Content here" id="floatingTextarea2" style="height: 100px"></textarea>
+  <label for="floatingTextarea2">Comments</label>
+</div> %>

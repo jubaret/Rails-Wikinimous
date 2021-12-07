@@ -1,0 +1,14 @@
+<h1>Welcome</h1>
+<h5>There are <%= @articles.count %> articles online !</h5>
+
+<% @articles.each do |article| %>
+  <div class="card m-3">
+    <div class="card-header">
+      <%= article.title %>
+    </div>
+    <div class="card-body">
+      <p class="card-text form-floating"><%= article.content %></p>
+      <%= link_to "Display", article_path(article), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end  %>

@@ -1,0 +1,22 @@
+<%# <h1><%= @article.title %>
+  <%# <%= link_to edit_article_path do %>
+    <%# <i class="fas fa-edit"></i>
+  <% end %>
+<%# </h1> %>
+
+<%# <p><%= @article.content</p> %>
+
+  <div class="card m-3">
+    <div class="card-header">
+      <%= @article.title %>
+    </div>
+    <div class="card-body">
+      <p class="card-text form-floating"><%= @article.content %></p>
+      <%= link_to "Edit", edit_article_path, class: "btn btn-primary" %>
+      <%= link_to "Delete article",
+            article_path(@article),
+            method: :delete,
+            class: "btn btn-danger",
+            data: { confirm: "Are you sure?" } %>
+    </div>
+  </div>
