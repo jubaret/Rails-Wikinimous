@@ -12,8 +12,13 @@
     <%= f.text_area :content, class: "form-control", style: "height: 500px" %>
     <%= f.label :content, class: "p-6" %>
   </div>
-  <%= f.submit "Submit", class: "btn btn-default btn-primary m-3" %>
-  <%= link_to "Cancel", article_path, class: "btn btn-light" %>
+  <% if @article.id%>
+    <%= f.submit "Submit", class: "btn btn-default btn-primary m-3" %>
+    <%= link_to "Cancel", article_path, class: "btn btn-light" %>
+    <% else %>
+    <%= f.submit "Submit", class: "btn btn-default btn-primary m-3" %>
+    <%= link_to "Cancel", articles_path, class: "btn btn-light" %>
+  <% end %>
 <% end %>
 
 
